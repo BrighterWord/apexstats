@@ -12,19 +12,36 @@ function buildChar() {
     var characters = JSON.parse(people);
 
     var gridLayout = document.getElementById("charLayout");
-    var gridDiv = document.createElement("div");
-    gridDiv.setAttribute = ("class", "w3-quarter");
-    for (i = 0; i < 4; i++) {
+    for (j = 0; j < 4; j++) {
+        var gridDiv = document.createElement("div");
+        gridDiv.className = "w3-quarter";
         var gridImg = document.createElement("img");
-        gridImg.src ="img/" + characters.data[i].name + ".png";
-        gridImg.setAttribute = ("style", "width:100%")
+        gridImg.src ="img/" + characters.data[j].name + ".png";
+        gridImg.style = "width:100%";
         var gridH3 = document.createElement("h3");
-        gridH3.textContent = characters.data[i].name;
+        gridH3.textContent = characters.data[j].name;
         var gridP = document.createElement("p");
-        gridP.textContent = characters.data[i].type;
+        gridP.textContent = characters.data[j].type;
         gridDiv.appendChild(gridImg);
         gridDiv.appendChild(gridH3);
         gridDiv.appendChild(gridP);
+        gridLayout.appendChild(gridDiv);
     }
-    gridLayout.appendChild(gridDiv);
+    
+    var gridLayout = document.getElementById("charLayout2");
+    for (j = 3; j < 7; j++) {
+        var gridDiv = document.createElement("div");
+        gridDiv.className = "w3-quarter";
+        var gridImg = document.createElement("img");
+        gridImg.src ="img/" + characters.data[j].name + ".png";
+        gridImg.style = "width:100%";
+        var gridH3 = document.createElement("h3");
+        gridH3.textContent = characters.data[j].name;
+        var gridP = document.createElement("p");
+        gridP.textContent = characters.data[j].type;
+        gridDiv.appendChild(gridImg);
+        gridDiv.appendChild(gridH3);
+        gridDiv.appendChild(gridP);
+        gridLayout.appendChild(gridDiv);
+    }  
 }
